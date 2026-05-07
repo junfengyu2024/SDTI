@@ -4,7 +4,7 @@
 PyTorch Implementation of Model Evaluation & Adversarial Attack
 Core Components: Model Loading, Image Quality Metrics, Data Preprocessing
 Compatible with PyTorch 2.x + torchvision 0.15+
-For TPAMI Submission
+
 """
 import math
 import os
@@ -27,7 +27,6 @@ from transformers import AutoModelForImageClassification
 from cyclemlp import CycleMLP_B5
 from transformers import AutoModelForImageClassification
 
-# --------------------------- Global Constants (TPAMI Standard) ---------------------------
 # ImageNet Normalization Parameters (Fixed for Academic Reproducibility)
 IMAGENET_MEAN: List[float] = [0.485, 0.456, 0.406]
 IMAGENET_STD: List[float] = [0.229, 0.224, 0.225]
@@ -215,9 +214,7 @@ def get_all_models(device: torch.device, weight_dtype: torch.dtype) -> List[Dict
     return model_list
 
 def load_single_classifier(model_type, device, weight_dtype):
-    """
-    仅加载指定的单个分类模型，避免加载全部无关模型
-    """
+   
     if model_type == "incv3":
         model = torchvision.models.inception_v3(weights=torchvision.models.Inception_V3_Weights.IMAGENET1K_V1)
         model.aux_logits = False
