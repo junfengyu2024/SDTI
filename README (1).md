@@ -6,7 +6,7 @@
 
 
 <div align="center">
-  <img src='./fig/model.png' width='80%' alt="SDTI Framework">
+  <img src='model.png' width='80%' alt="SDTI Framework">
   <br>
   <em>Figure 1: Overall architecture of SDTI framework.</em>
 </div>
