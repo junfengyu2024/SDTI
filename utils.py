@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+
 """
 PyTorch Implementation of Model Evaluation & Adversarial Attack
 Core Components: Model Loading, Image Quality Metrics, Data Preprocessing
