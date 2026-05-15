@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
-# Copyright 2025 Yixiao Chen, Shikun Li, Ruoyu Li, Zhe Li, Junliang Xing
+
 # Copyright 2024 The HuggingFace Inc. team. All rights reserved.
 # Licensed under the Apache License, Version 2.0
 """
