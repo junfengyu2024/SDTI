@@ -117,15 +117,42 @@ We compare SDTI against state-of-the-art targeted attack methods:
 
 ---
 
-## 🚀 Training
+ Training
 
+```bash
+python train.py \
+  --pretrained_model_name_or_path "your_path" \
+  --dataset_dir "your_path" \
+  --label_to_caption_path "/path/imagenet_class_index.json" \
+  --output_root "output" \
+  --model_type res152 \
+  --eps 16 \
+  --label_flag N8 \
+  --num_train_epochs 10 \
+  --train_batch_size 16 \
+  --learning_rate 2e-05 \
+  --s_for 6 \
+  --s_gen 6 \
+  --freeze_ratio 0.5
+```
 
+ Test  Models
 
-
-
-
-
-## 🛡️ Test  Models
+```bash
+python inference.py \
+  --pretrained_model_name_or_path "your_path" \
+  --dataset_dir "your dataset" \
+  --lora_path "your_path.safetensors" \
+  --label_to_caption_path "/path/imagenet_class_index.json" \
+  --excel_output_path "output/results.xlsx" \
+  --model_type res152 \
+  --eps 16 \
+  --label_flag N8 \
+  --s_for 6 \
+  --s_gen 6 \
+  --freeze_ratio 0.5 \
+  --include_standard_models
+```
 
 
 
