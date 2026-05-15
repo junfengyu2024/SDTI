@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-# coding=utf-8
 
-# Copyright 2024 The HuggingFace Inc. team. All rights reserved.
-# Licensed under the Apache License, Version 2.0
 """
 Inference script for multi‑targeted attack: frozen first‑half denoising +
 second‑half generation, attacking standard and robust models.
