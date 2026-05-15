@@ -2,8 +2,7 @@
 """
 Inference script for multi‑targeted attack: frozen first‑half denoising +
 second‑half generation, attacking standard and robust models.
-Target labels are loaded from the NIPS CSV and are guaranteed to differ
-from the true class.
+
 """
 
 import os
