@@ -1,7 +1,7 @@
 
 """
 Training script: multi‑targeted adversarial attack via DDIM inversion + diffusion with LoRA.
-First half of generation steps are frozen (unconditional), second half are fine‑tuned
+First half of generation steps are frozen, second half are fine‑tuned
 with adversarial loss on a classifier.
 """
 
