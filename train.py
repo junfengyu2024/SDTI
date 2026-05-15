@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-# coding=utf-8
 
-# Copyright 2024 The HuggingFace Inc. team. All rights reserved.
-# Licensed under the Apache License, Version 2.0
 """
 Training script: multi‑targeted adversarial attack via DDIM inversion + diffusion with LoRA.
 First half of generation steps are frozen (unconditional), second half are fine‑tuned
