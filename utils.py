@@ -208,16 +208,11 @@ def get_all_models(device: torch.device, weight_dtype: torch.dtype) -> List[Dict
 
 def load_single_classifier(model_type, device, weight_dtype):
    
-    if model_type == "incv3":
-        model = torchvision.models.inception_v3(weights=torchvision.models.Inception_V3_Weights.IMAGENET1K_V1)
-        model.aux_logits = False
-        input_size = 299
-    elif model_type == "res152":
+  
+    if model_type == "res152":
         model = torchvision.models.resnet152(weights=torchvision.models.ResNet152_Weights.IMAGENET1K_V1)
         input_size = 224
-    elif model_type == "swin_tiny":
-        model = torchvision.models.swin_t(weights=torchvision.models.Swin_T_Weights.IMAGENET1K_V1)
-        input_size = 224
+    
     elif model_type == "mixer_b16":
         model = torchvision.models.mlp_mixer_b16(weights=torchvision.models.MLP_Mixer_B16_Weights.IMAGENET1K_V1)
         input_size = 224
@@ -225,21 +220,7 @@ def load_single_classifier(model_type, device, weight_dtype):
 
         model = AutoModelForImageClassification.from_pretrained("facebook/deit-base-distilled-patch16-224")
         input_size = 224
-    elif model_type == "cycle_mlp":
-        import sys
-        from cyclemlp import CycleMLP_B5
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        cyclemlp_path = os.path.join(current_dir, "cycle_mlp")
-        sys.path.append(cyclemlp_path)
-        model = CycleMLP_B5(pretrained=False, num_classes=1000)
-        weight_path = os.path.join(cyclemlp_path, "CycleMLP_B5.pth")
-        checkpoint = torch.load(weight_path, map_location=device, weights_only=True)
-        state_dict = checkpoint.get('state_dict', checkpoint.get('model', checkpoint))
-        state_dict = {k.replace('module.', ''): v for k, v in state_dict.items()}
-        model.load_state_dict(state_dict, strict=True)
-        input_size = 224
-    else:
-        raise ValueError(f"Unsupported model_type: {model_type}")
+    
 
     model = model.to(device=device, dtype=weight_dtype)
     model.eval()
