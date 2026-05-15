@@ -117,7 +117,7 @@ We compare SDTI against state-of-the-art targeted attack methods:
 
 ---
 
- Training
+ ###Training
 
 ```bash
 python train.py \
@@ -136,7 +136,7 @@ python train.py \
   --freeze_ratio 0.5
 ```
 
- Test  Models
+🛡️### Test Models
 
 ```bash
 python inference.py \
