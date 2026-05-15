@@ -1,10 +1,4 @@
 
-"""
-PyTorch Implementation of Model Evaluation & Adversarial Attack
-Core Components: Model Loading, Image Quality Metrics, Data Preprocessing
-Compatible with PyTorch 2.x + torchvision 0.15+
-
-"""
 import math
 import os
 import sys
